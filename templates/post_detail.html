@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+<!-- here the name post is returned by detailview this is what makes django special instead of post u can even write object -->
+{% block content  %}
+    <div class="post-entry">
+        <h2> {{ post.title }}</h2>
+        <p> {{ post.body }}</p>
+    </div>
+<!-- here the name post_edit is used from the name we gave in urls.py -->
+    <a href="{% url 'post_edit' post.pk %}">Edit Blog Post</a>  || 
+    
+    <a href="{% url 'post_delete' post.pk %}">Delete Blog Post</a>
+{% endblock content %}
